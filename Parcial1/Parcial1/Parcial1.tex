@@ -1,0 +1,165 @@
+\documentclass[twoside,letterpaper,12pt]{report}
+\usepackage[spanish,backgroundcolor=green,textsize=small]{todonotes}
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry} 
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage[section]{placeins} 
+%\usepackage[table]{xcolor}
+%\usepackage{plain} % no se de que es
+%\usepackage{a4wide} % para el ancho de pagina
+%\usepackage{multirow} % tablas con multicolumna
+
+\setlength{\parindent}{15pt}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+citecolor=black,        % color of links to bibliography
+filecolor=black,      % color of file links
+urlcolor=black           % color of external links
+}
+
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+basicstyle=\footnotesize\ttfamily, % Standardschrift
+numbers=left,               % Ort der Zeilennummern
+numberstyle=\tiny,          % Stil der Zeilennummern
+%stepnumber=2,               % Abstand zwischen den Zeilennummern
+numbersep=5pt,              % Abstand der Nummern zum Text
+tabsize=2,                  % Groesse von Tabs
+extendedchars=true,         %
+breaklines=true,            % Zeilen werden Umgebrochen
+keywordstyle=\color{red},
+frame=b,         
+%        keywordstyle=[1]\textbf,    % Stil der Keywords
+%        keywordstyle=[2]\textbf,    %
+%        keywordstyle=[3]\textbf,    %
+%        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+stringstyle=\color{white}\ttfamily, % Farbe der String
+showspaces=false,           % Leerzeichen anzeigen ?
+showtabs=false,             % Tabs anzeigen ?
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+framexbottommargin=4pt,
+%backgroundcolor=\color{lightgray},
+showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+}
+\lstloadlanguages{% Check Dokumentation for further languages ...
+%[Visual]Basic
+%Pascal
+%C
+sh,
+C++
+%XML
+%HTML
+%Java
+}
+
+\title{Parcial 1\\[1cm]
+Fundamentos de Biología Computacional}
+
+\author{
+	Sergio Andrés Monsalve Castañeda \\
+	Código: 201410029114\\[0.5cm]	
+	\includegraphics[width=0.25\textwidth]{logo_eafit} \\[1cm]
+	\textbf{Profesores:} \\
+	Javier Correa \\
+	Alejandro Rodríguez \\[1cm]
+	Departamento de Informática y Sistemas \\
+	Universidad EAFIT\\[0.5cm] 
+	Copyright \copyright \hspace{3pt}
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+	\item  Los siguientes son secuencias de anticodones que participaron en la síntesis de una proteína: \textbf{ UAC UAA	CGC	CCC	AGA	UCA}. Derive:
+
+\begin{itemize}
+	\item La cadena de ARNm: AUG AUU GCG GGG UCU AGU
+	\item La cadena de ADN que sirvió de molde: En el sentido 3' 5' la cadena molde es: \textbf{TAC TAA CGC CCC AGA TCA}
+	\item Teniendo en cuenta en la siguiente tabla de codones, traduzca la secuencia de aminoácidos correspondiente: \text{Met Ile Ala Gly Ser Ser}
+\end{itemize}
+
+	\item ¿Cuál es la Relación entre un alineamiento de secuencias y evolución?
+
+	\textbf{Respuesta:}  Con el alineamiento de secuencias se puede encontrar un porcentaje de identidad que de muestra de la similitud entre organismos. 
+
+	A medida que organismos con ancestros en común evolucionan, van acumulando mutaciones en el genoma, las  cuales derivan en especies diferentes. De acuerdo a la cantidad de diferencias encontradas en el alineamiento, se puede deducir la cercanía o no entre especies. 
+ 
+	Cuando el porcentaje de identidad sea igual al 100\% existe una alta probabilidad de que las secuencias correspondan al mismo organismo.
+
+	\item Según el modelo estadístico de Karlin-Altschul(1990), el cual hace referencia a la estimación del puntaje más alto(HSP) en un alineamiento de dos secuencias. ¿Cómo es argumentado este modelo y que aplicabilidad tiene en la búsqueda de homología de secuencias hoy en día?. Explique brevemente el modelo.
+
+
+
+	\item Represente como sería una matriz de alineamiento global para las siguientes dos proteínas. Asuma los valores estándar de puntuación que hay reportado en la literatura para aminoácidos.	
+
+	\begin{enumerate}
+		\item SPAALKALAEAAGS	
+ 		\item SGAALKALAEAAPS	 
+	\end{enumerate}
+
+	\item Consulte qué tipo de algoritmos de alineamiento utilizan los programas de FASTA, CAP3, Bowtie. Compare los tres en términos de velocidad, capacidad de análisis sus principales limitaciones.
+
+	\begin{tabular}{|r|c|c|c|c|}
+		\hline 
+		Programa & Algoritmo & Velocidad & Capacidad de análisis & Limitaciones \\
+		\hline
+		FASTA & 1 & 2 & 3 & 4 \\
+		\hline 
+		CAP3 & 1 & 2 & 3 & 4 \\
+		\hline
+		Bowtie & 1 & 2 & 3 & 4 \\
+		\hline
+	\end{tabular}
+
+	\textbf{Limitaciones:}
+	\begin{itemize}
+		\item [FASTA]:
+		\item [CAP3]:
+		\item [Bowtie]:
+	\end{itemize}
+
+	\item \textbf{Scripting}:
+	\begin{enumerate}
+		\item Escribir un script en Perl (Python) donde, utilizando el módulo de BioPerl (BioPython), se pueda bajar una secuencia FASTA de genbank: EU856392
+		\item Abra e imprima el archivo fasta
+		\item Traduzca la secuencia a proteína
+		\item Realice un blastp contra la base de datos de proteínas
+		\item Imprima el Resultado del Blast
+	\end{enumerate}
+
+
+\end{enumerate}
+
+%\chapter{Un Capitulo}
+%\label{refcapitulo}
+%aca va la info.\cite{sergiomonsalve}
+
+\bibliographystyle{ieeetr}
+\bibliography{Referencias.bib}
+
+%\newpage
+%\appendix
+%\chapter{Repositorio del código}
+%\input{caps/Apendix}
+%Aca va el apendice
+
+\end{document}
